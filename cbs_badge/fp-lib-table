@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name cbs_badge)(type KiCad)(uri ${KIPRJMOD}/cbs_badge.pretty)(options "")(descr ""))
+  (lib (name neurons)(type KiCad)(uri ${KIPRJMOD}/neurons_footprint.pretty)(options "")(descr ""))
+)
