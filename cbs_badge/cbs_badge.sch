@@ -21,6 +21,8 @@ F 0 "U1" H 3621 2596 50  0000 R CNN
 F 1 "ATtiny45-20SU" H 3621 2505 50  0000 R CNN
 F 2 "Package_SO:SOIJ-8_5.3x5.3mm_P1.27mm" H 4150 2550 50  0001 C CIN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" H 4150 2550 50  0001 C CNN
+F 4 "ATTINY45V-10SU-ND" H 4150 2550 50  0001 C CNN "Part Number"
+F 5 "Digikey" H 4150 2550 50  0001 C CNN "Supplier"
 	1    4150 2550
 	1    0    0    -1  
 $EndComp
@@ -54,6 +56,8 @@ F 0 "BT1" H 7018 2496 50  0000 L CNN
 F 1 "Battery_Cell" H 7018 2405 50  0000 L CNN
 F 2 "Battery:BatteryHolder_MPD_BC2003_1x2032" V 6900 2460 50  0001 C CNN
 F 3 "~" V 6900 2460 50  0001 C CNN
+F 4 "2057-BH-67D-5-ND" H 6900 2400 50  0001 C CNN "Part Number"
+F 5 "Digikey" H 6900 2400 50  0001 C CNN "Supplier"
 	1    6900 2400
 	1    0    0    -1  
 $EndComp
@@ -87,6 +91,7 @@ F 0 "J1" H 5471 4146 50  0000 R CNN
 F 1 "AVR-ISP-6" H 5471 4055 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical_SMD" V 5550 4100 50  0001 C CNN
 F 3 " ~" H 4525 3500 50  0001 C CNN
+F 4 "Digikey" H 5800 4050 50  0001 C CNN "Supplier"
 	1    5800 4050
 	1    0    0    -1  
 $EndComp
@@ -148,6 +153,8 @@ F 0 "C1" H 7315 3346 50  0000 L CNN
 F 1 "100nF" H 7315 3255 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 7238 3150 50  0001 C CNN
 F 3 "~" H 7200 3300 50  0001 C CNN
+F 4 "Digikey" H 7200 3300 50  0001 C CNN "Supplier"
+F 5 "399-9305-1-ND" H 7200 3300 50  0001 C CNN "Part Number"
 	1    7200 3300
 	1    0    0    -1  
 $EndComp
@@ -181,6 +188,8 @@ F 0 "D1" H 6093 1945 50  0000 C CNN
 F 1 "LED" H 6093 2036 50  0000 C CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 6100 2200 50  0001 C CNN
 F 3 "~" H 6100 2200 50  0001 C CNN
+F 4 "350-2048-1-ND" H 6100 2200 50  0001 C CNN "Part Number"
+F 5 "Digikey" H 6100 2200 50  0001 C CNN "Supplier"
 	1    6100 2200
 	-1   0    0    1   
 $EndComp
@@ -192,6 +201,8 @@ F 0 "D2" H 6093 2345 50  0000 C CNN
 F 1 "LED" H 6093 2436 50  0000 C CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 6100 2600 50  0001 C CNN
 F 3 "~" H 6100 2600 50  0001 C CNN
+F 4 "350-2048-1-ND" H 6100 2600 50  0001 C CNN "Part Number"
+F 5 "Digikey" H 6100 2600 50  0001 C CNN "Supplier"
 	1    6100 2600
 	-1   0    0    1   
 $EndComp
@@ -203,6 +214,8 @@ F 0 "D3" H 6093 2745 50  0000 C CNN
 F 1 "LED" H 6093 2836 50  0000 C CNN
 F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 6100 3000 50  0001 C CNN
 F 3 "~" H 6100 3000 50  0001 C CNN
+F 4 "350-2048-1-ND" H 6100 3000 50  0001 C CNN "Part Number"
+F 5 "Digikey" H 6100 3000 50  0001 C CNN "Supplier"
 	1    6100 3000
 	-1   0    0    1   
 $EndComp
@@ -239,6 +252,8 @@ F 0 "R1" V 5593 2200 50  0000 C CNN
 F 1 "470" V 5684 2200 50  0000 C CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 5730 2200 50  0001 C CNN
 F 3 "~" H 5800 2200 50  0001 C CNN
+F 4 "Digikey" H 5800 2200 50  0001 C CNN "Supplier"
+F 5 "RMCF1206JT470RCT-ND" H 5800 2200 50  0001 C CNN "Part Number"
 	1    5800 2200
 	0    1    1    0   
 $EndComp
@@ -250,6 +265,8 @@ F 0 "R2" V 5593 2600 50  0000 C CNN
 F 1 "470" V 5684 2600 50  0000 C CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 5730 2600 50  0001 C CNN
 F 3 "~" H 5800 2600 50  0001 C CNN
+F 4 "Digikey" H 5800 2600 50  0001 C CNN "Supplier"
+F 5 "RMCF1206JT470RCT-ND" H 5800 2600 50  0001 C CNN "Part Number"
 	1    5800 2600
 	0    1    1    0   
 $EndComp
@@ -261,6 +278,8 @@ F 0 "R3" V 5593 3000 50  0000 C CNN
 F 1 "470" V 5684 3000 50  0000 C CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 5730 3000 50  0001 C CNN
 F 3 "~" H 5800 3000 50  0001 C CNN
+F 4 "Digikey" H 5800 3000 50  0001 C CNN "Supplier"
+F 5 "RMCF1206JT470RCT-ND" H 5800 3000 50  0001 C CNN "Part Number"
 	1    5800 3000
 	0    1    1    0   
 $EndComp
@@ -286,6 +305,7 @@ F 0 "SW1" H 8450 1885 50  0000 C CNN
 F 1 "TOUCH" H 8450 1794 50  0000 C CNN
 F 2 "cbs_badge:neuron" H 8450 1800 50  0001 C CNN
 F 3 "~" H 8450 1800 50  0001 C CNN
+F 4 "SY189-ND" H 8450 1600 50  0001 C CNN "Part Number"
 	1    8450 1600
 	1    0    0    -1  
 $EndComp
@@ -297,6 +317,8 @@ F 0 "R4" H 7880 1404 50  0000 R CNN
 F 1 "10M" H 7880 1495 50  0000 R CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 7880 1450 50  0001 C CNN
 F 3 "~" H 7950 1450 50  0001 C CNN
+F 4 "Digikey" H 7950 1450 50  0001 C CNN "Supplier"
+F 5 "RMCF1206JT10M0CT-ND" H 7950 1450 50  0001 C CNN "Part Number"
 	1    7950 1450
 	-1   0    0    1   
 $EndComp
