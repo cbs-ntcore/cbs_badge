@@ -1,4 +1,6 @@
-![preview](/cbs_badge/cbs_badge_render.png?raw=true "Rough Render")
+![pcb](/cbs_badge/cbs_badge_render.png?raw=true "Rough Render")
+![front](/cad_front.png?raw=true "CAD front")
+![back](/cad_back.png?raw=true "CAD back")
 
 Board is 2.25 square inches
 
