@@ -1,6 +1,7 @@
 ![pcb](/cbs_badge/cbs_badge_render.png?raw=true "Rough Render")
 ![front](/cad_front.png?raw=true "CAD front")
 ![back](/cad_back.png?raw=true "CAD back")
+![neurongif](/neuron_firmware.gif?raw=true "Neuron firmware")
 
 Board is 2.25 square inches
 
