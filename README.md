@@ -72,10 +72,22 @@ programmer (such as the [USBtinyISP](https://www.adafruit.com/product/46)).
 ![front](/cad_front.png?raw=true "CAD front")
 ![back](/cad_back.png?raw=true "CAD back")
 
-## Computer aided design ([CAD](https://www.youtube.com/watch?v=DiLczlKGLhg)) using Autodesk Fusion360
+## Computer aided design (CAD) using Autodesk Fusion360
 
 # Software
 ![neurongif](/neuron_firmware.gif?raw=true "Neuron firmware")
+
+The badge 'firmware' (software for embedded hardware) simulates 3 neurons connected in a ring with 3
+model excitatory synapses. The spike output of each neuron is mapped to a different LED which flashes
+when the neuron spikes. When the touch sensor (copper neurons at the bottom of the badge) is touched, the
+microcontroller wakes up from 'sleep' (a low power mode where very few features are active) and 
+initializes the neural network by setting the syanptic weights to a low value. As the network runs
+random simulated currents are injected into the 3 neurons causing them to initially spike in a random
+pattern. These spikes trigger time-dependent changes in the synaptic weights. The lack of inhibition
+and asymmetry in the plasticity causes unbound excitation in the circuit and the network often
+quickly converges to a state of continuous fast firing. The network will continue to run as long
+as the touch sensor is held. When the touch sensor is released the microcontroller will reenter
+'sleep' mode to extend battery life.
 
 # Ordering
 
