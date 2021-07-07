@@ -15,7 +15,7 @@ By building a badge users will learn about:
 - digital fabrication using 3D printing and laser cutting for rapid prototyping and production
 
 # Electronics
-![pcb](/cbs_badge/cbs_badge_render.png?raw=true "Rough Render")
+![pcb](/media/imgs/cbs_badge_render.png?raw=true "Rough Render")
 ## PCB
 Although it is possible to fabricate your own printed circuit boards, the results are often less precise and more
 time consuming than ordering a custom board. The cost of the board will depend on the difficulty in fabricating the design,
@@ -72,7 +72,7 @@ For a detailed course on using Arduino please see the
 ['Arduino for Biologists' nanocourse](https://github.com/HMS-RIC/ArduinoNanocourse).
 
 # Software
-![neurongif](/neuron_firmware.gif?raw=true "Neuron firmware")
+![neurongif](/media/gifs/neuron_firmware.gif?raw=true "Neuron firmware")
 
 The badge 'firmware' (software for embedded hardware) simulates 3 neurons connected in a ring with 3
 model excitatory synapses. The spike output of each neuron is mapped to a different LED which flashes
@@ -87,10 +87,12 @@ as the touch sensor is held. When the touch sensor is released the microcontroll
 'sleep' mode to extend battery life.
 
 # Case
-![front](/cad_front.png?raw=true "CAD front")
-![back](/cad_back.png?raw=true "CAD back")
+![front](/media/imgs/cad_front.png?raw=true "CAD front")
+![back](/media/imgs/cad_back.png?raw=true "CAD back")
 
 ## Computer aided design (CAD) using Autodesk Fusion360
+
+![CAD](/media/gifs/CAD_design.gif?raw=true "CAD design")
 
 Although simple 2D mechanical parts can be designed in Inkscape, Adobe Illustrator or other vector
 graphics programs, 3D parts and assemblies are often designed in specialized computer aided design
@@ -103,6 +105,8 @@ adapt a single design to multiple applications. For the badge, 2 parts were desi
 case designed for easy 3D printing and a customizable back cover designed for laser cutting.
 
 ## 3D printed case
+
+![3D printing](/media/gifs/3D_printing_slicing.gif?raw=true "3D printing")
 
 3D printing is a relatively automated process for translating a digital design to a physical
 object. Although many materials can be 3D printed with often very different processes, one of the
