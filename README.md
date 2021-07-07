@@ -24,7 +24,7 @@ are less than 6 mils (thousandths of an inch) or have many layers (pcbs are made
 copper and other materials) are typically manufacturable at an increased cost or lead time. The design for this
 badge is relatively simple and can be made by most low cost venders ('fab houses') including [OSHPark](https://oshpark.com/).
 OSHPark is highly recommended as they produce high quality boards with a relatively short lead time (typically a week)
-at a USA location allowing for overnight shipping. For they 'Prototype' service they charge $5 per square inch for a 2
+at a USA location allowing for overnight shipping. For their 'Prototype' service they charge $5 per square inch for a 2
 layer PCB. The badge is 2.25 square inches costing $11.25 per board. When ordered with their 'Medium Run' bulk service
 (which requires ordering at least 100 square inches) the cost drops to $2.25 per board.
 
@@ -32,10 +32,10 @@ layer PCB. The badge is 2.25 square inches costing $11.25 per board. When ordere
 KiCad is a free and open source electronics design program that runs on all modern operating systems. It's design
 process involves a number of steps often starting with making a schematic of the circuit you would like to build.
 This schematic typically includes several components (including resistors, capacitors, connectors, integrated
-circuits etc) connected using traced (wires embedded in the final PCB design). After a schematic is drawn some
+circuits etc) connected using traces (wires embedded in the final PCB design). After a schematic is drawn some
 automated tests should be run (electric rules check or ERC) to check for incorrect or missing connections. The
 final schematic and components can then be exported as a 'netlist', footprints (custom copper shapes that fit
-specific components) can then be associated witht the netlist components and then imported into the pcb
+specific components) can then be associated with the netlist components and then imported into the pcb
 layout editor. In the pcb layout editor footprints are placed on a layered design (typical low cost boards
 have 2 copper layers 'top' and 'bottom') and traces are drawn to connect footprints based on the connectivity
 defined in the netlist. Before finalizing a design the pcb layout editor can run several automated checks
@@ -68,11 +68,8 @@ your program and 'uploading' it to your board. Most boards can be programmed ove
 badge uses a simplier method called 'in circuit serial programming' (ICSP) that requires a custom
 programmer (such as the [USBtinyISP](https://www.adafruit.com/product/46)).
 
-# Case
-![front](/cad_front.png?raw=true "CAD front")
-![back](/cad_back.png?raw=true "CAD back")
-
-## Computer aided design (CAD) using Autodesk Fusion360
+For a detailed course on using Arduino please see the
+['Arduino for Biologists' nanocourse](https://github.com/HMS-RIC/ArduinoNanocourse).
 
 # Software
 ![neurongif](/neuron_firmware.gif?raw=true "Neuron firmware")
@@ -89,8 +86,52 @@ quickly converges to a state of continuous fast firing. The network will continu
 as the touch sensor is held. When the touch sensor is released the microcontroller will reenter
 'sleep' mode to extend battery life.
 
-# Ordering
+# Case
+![front](/cad_front.png?raw=true "CAD front")
+![back](/cad_back.png?raw=true "CAD back")
 
+## Computer aided design (CAD) using Autodesk Fusion360
+
+Although simple 2D mechanical parts can be designed in Inkscape, Adobe Illustrator or other vector
+graphics programs, 3D parts and assemblies are often designed in specialized computer aided design
+(CAD) software. The badge case was desigend in Autodesk Fusion360 (free to academics) and involved
+a typical process where 2D sketches on reference planes are 'extruded' to form 3D shapes. Each
+new 3D shape can be joined with previous shapes or be used to cut custom shaped holes out of existing
+parts. This process creates a final (or multiple) 3D shapes and a recorded history of how these
+parts were designed. This history can be edited and replayed to generate part revisions or to
+adapt a single design to multiple applications. For the badge, 2 parts were designed: a 
+case designed for easy 3D printing and a customizable back cover designed for laser cutting.
+
+## 3D printed case
+
+3D printing is a relatively automated process for translating a digital design to a physical
+object. Although many materials can be 3D printed with often very different processes, one of the
+most common methods for 3D printing is fused deposition modeling (FDM) using a plastic filament, 
+polylactic acid (PLA). FDM printing involves heating up and forcing (extruding) PLA through a
+circular nozzle (0.4 mm in diameter) that is mounted to a XYZ movement system. By depositing
+and fusing overlapping 2D layers, complex 3D shapes can be created. Preparing a design for FDM
+printing involves:
+-  exporting a solid model (in STL file format) from your CAD software
+-  importing the STL into a 'slicer' program that:
+    -  cuts the model into 2D layers
+    - adds any necessary support material to deal with unsupported overhangs (where a higher 2D layer has no plastic underneath
+to join to)
+    - generates a sequence of movements (GCODE) to command the 3D printer to make the part
+- loading and running the GCODE on a suitable 3D printer
+- finally removing any support material and finishing your part
+
+## Lasercut back cover
+
+Lasercutting is a common technique for cutting 2D shapes out of flat sheets of plastic (typically
+acrylic). A high powered (75 watt) CO2 laser is focused on the surface of the plastic at a position
+determined by computer controlled XY movement. This focused light quickly ablates the plastic
+under the beam and by moving the cut position in various paths, flat 2D parts can be produced.
+For simple designs, vector graphics programs (Inkscape, Adobe Illustrator, Corel Draw) can be used to simply
+draw the paths the laser should follow and for more complex designs sketches can be exported from
+CAD software in a suitable format (DXF). For most 2D geometries lasercutting is significantly
+faster, more accurate and produced a better finished part compared to 3D printing.
+
+# Ordering
 
 To construct a badge you will need to:
 - attain a PCB by coming to see us or ordering one from a suitable 'fab house' such as [OSHPark](https://oshpark.com/)
