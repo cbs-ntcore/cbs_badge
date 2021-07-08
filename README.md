@@ -32,7 +32,7 @@ layer PCB. The badge is 2.25 square inches costing $11.25 per board. When ordere
 
 ![schematic](/media/imgs/schematic.png?raw=true "Schematic")
 
-KiCad is a free and open source electronics design program that runs on all modern operating systems. It's design
+[KiCad](https://www.kicad.org/) is a free and open source electronics design program that runs on all modern operating systems. It's design
 process involves a number of steps often starting with making a schematic of the circuit you would like to build.
 This schematic typically includes several components (including resistors, capacitors, connectors, integrated
 circuits etc) connected using traces (wires embedded in the final PCB design). After a schematic is drawn some
@@ -63,7 +63,7 @@ is connected to a custom neuron footprint used as a touch sensor.
 
 ## Embedded programming using Arduino
 
-Arduino is a simplified environment for writing programs for and configuring microcontrollers. There are
+[Arduino](https://www.arduino.cc/) is a beginner friendly environment for writing programs for and configuring microcontrollers. There are
 many official and non-official 'Arduino compatible' boards which can be programmed with the Arduino
 integrated development environment (IDE). Arduino programs are written in the C++ programming language
 and use functions that simplify the process of setting or reading the state of digital and analog pins
@@ -101,8 +101,8 @@ as the touch sensor is held. When the touch sensor is released the microcontroll
 
 Although simple 2D mechanical parts can be designed in Inkscape, Adobe Illustrator or other vector
 graphics programs, 3D parts and assemblies are often designed in specialized computer aided design
-(CAD) software. The badge case was desigend in Autodesk Fusion360 (free to academics) and involved
-a typical process where 2D sketches on reference planes are 'extruded' to form 3D shapes. Each
+(CAD) software. The badge case was desigend in [Autodesk Fusion360](https://www.autodesk.com/products/fusion-360/)
+(free to academics) and involved a typical process where 2D sketches on reference planes are 'extruded' to form 3D shapes. Each
 new 3D shape can be joined with previous shapes or be used to cut custom shaped holes out of existing
 parts. This process creates a final (or multiple) 3D shapes and a recorded history of how these
 parts were designed. This history can be edited and replayed to generate part revisions or to
