@@ -29,6 +29,9 @@ layer PCB. The badge is 2.25 square inches costing $11.25 per board. When ordere
 (which requires ordering at least 100 square inches) the cost drops to $2.25 per board.
 
 ## PCB and circuit design
+
+![schematic](/media/imgs/schematic.png?raw=true "Schematic")
+
 KiCad is a free and open source electronics design program that runs on all modern operating systems. It's design
 process involves a number of steps often starting with making a schematic of the circuit you would like to build.
 This schematic typically includes several components (including resistors, capacitors, connectors, integrated
@@ -43,6 +46,8 @@ defined in the netlist. Before finalizing a design the pcb layout editor can run
 to input these design rules into the editor). Fab houses typically accept gerber files (a special file format
 that contains images of layers of the pcb and other features needed for fabrication). However, some houses
 including OSHPark will directly accept KiCad designs.
+
+![pcb](/media/imgs/pcb_layers.png?raw=true "PCB Layers")
 
 ## Programmable electronics using microcontrollers
 
