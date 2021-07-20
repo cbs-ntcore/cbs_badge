@@ -71,7 +71,8 @@ and other aspects of using a microcontroller. Development using Arduino starts w
 adding support for the board you'd like the use, installing any required libraries, and then writing
 your program and 'uploading' it to your board. Most boards can be programmed over USB. However, the
 badge uses a simpler method called 'in circuit serial programming' (ICSP) that requires a custom
-programmer (such as the [USBtinyISP](https://www.adafruit.com/product/46)).
+programmer (such as the [Pocket AVR Programmer](https://www.sparkfun.com/products/9825) or 
+[USBtinyISP](https://www.adafruit.com/product/46)).
 
 For a detailed course on using Arduino please see the
 ['Arduino for Biologists' nanocourse](https://github.com/HMS-RIC/ArduinoNanocourse).
