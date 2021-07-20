@@ -61,6 +61,7 @@ This ATTiny has only 8 connections (pins) and requires only a program and a conn
 ground to function. For the badge 3 pins are connected to light emitting diodes (LEDs) and one more pin
 is connected to a custom neuron footprint used as a touch sensor.
 
+# Software
 ## Embedded programming using Arduino
 
 [Arduino](https://www.arduino.cc/) is a beginner friendly environment for writing programs for and configuring microcontrollers. There are
@@ -77,7 +78,6 @@ programmer (such as the [Pocket AVR Programmer](https://www.sparkfun.com/product
 For a detailed course on using Arduino please see the
 ['Arduino for Biologists' nanocourse](https://github.com/HMS-RIC/ArduinoNanocourse).
 
-# Software
 ![neurongif](/media/gifs/neuron_firmware.gif?raw=true "Neuron firmware")
 
 The badge 'firmware' (software for embedded hardware) simulates 3 neurons connected in a ring with 3
