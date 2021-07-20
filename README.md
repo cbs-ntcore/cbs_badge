@@ -36,7 +36,7 @@ layer PCB. The badge is 2.25 square inches costing $11.25 per board. When ordere
 process involves a number of steps often starting with making a schematic of the circuit you would like to build.
 This schematic typically includes several components (including resistors, capacitors, connectors, integrated
 circuits etc) connected using traces (wires embedded in the final PCB design). After a schematic is drawn some
-automated tests should be run (electric rules check or ERC) to check for incorrect or missing connections. The
+automated tests should be run (electrical rules check or ERC) to check for incorrect or missing connections. The
 final schematic and components can then be exported as a 'netlist', footprints (custom copper shapes that fit
 specific components) can then be associated with the netlist components and then imported into the pcb
 layout editor. In the pcb layout editor footprints are placed on a layered design (typical low cost boards
@@ -70,7 +70,7 @@ and use functions that simplify the process of setting or reading the state of d
 and other aspects of using a microcontroller. Development using Arduino starts with installing the IDE,
 adding support for the board you'd like the use, installing any required libraries, and then writing
 your program and 'uploading' it to your board. Most boards can be programmed over USB. However, the
-badge uses a simplier method called 'in circuit serial programming' (ICSP) that requires a custom
+badge uses a simpler method called 'in circuit serial programming' (ICSP) that requires a custom
 programmer (such as the [USBtinyISP](https://www.adafruit.com/product/46)).
 
 For a detailed course on using Arduino please see the
@@ -83,7 +83,7 @@ The badge 'firmware' (software for embedded hardware) simulates 3 neurons connec
 model excitatory synapses. The spike output of each neuron is mapped to a different LED which flashes
 when the neuron spikes. When the touch sensor (copper neurons at the bottom of the badge) is touched, the
 microcontroller wakes up from 'sleep' (a low power mode where very few features are active) and 
-initializes the neural network by setting the syanptic weights to a low value. As the network runs
+initializes the neural network by setting the synaptic weights to a low value. As the network runs,
 random simulated currents are injected into the 3 neurons causing them to initially spike in a random
 pattern. These spikes trigger time-dependent changes in the synaptic weights. The lack of inhibition
 and asymmetry in the plasticity causes unbound excitation in the circuit and the network often
@@ -101,7 +101,7 @@ as the touch sensor is held. When the touch sensor is released the microcontroll
 
 Although simple 2D mechanical parts can be designed in Inkscape, Adobe Illustrator or other vector
 graphics programs, 3D parts and assemblies are often designed in specialized computer aided design
-(CAD) software. The badge case was desigend in [Autodesk Fusion360](https://www.autodesk.com/products/fusion-360/)
+(CAD) software. The badge case was designed in [Autodesk Fusion360](https://www.autodesk.com/products/fusion-360/)
 (free to academics) and involved a typical process where 2D sketches on reference planes are 'extruded' to form 3D shapes. Each
 new 3D shape can be joined with previous shapes or be used to cut custom shaped holes out of existing
 parts. This process creates a final (or multiple) 3D shapes and a recorded history of how these
@@ -143,7 +143,7 @@ faster, more accurate and produced a better finished part compared to 3D printin
 # Ordering
 
 To construct a badge you will need to:
-- attain a PCB by coming to see us or ordering one from a suitable 'fab house' such as [OSHPark](https://oshpark.com/)
+- obtain a PCB by coming to see us or ordering one from a suitable 'fab house' such as [OSHPark](https://oshpark.com/)
 Board is 2.25 square inches
 
 Parts for 100x = $263.02
