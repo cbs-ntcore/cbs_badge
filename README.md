@@ -14,6 +14,91 @@ By building a badge users will learn about:
 - designing mechanical parts using [Autodesk Fusion360](https://www.autodesk.com/products/fusion-360/) (free to academics)
 - digital fabrication using 3D printing and laser cutting for rapid prototyping and production
 
+Your badge comes in 4 major parts:
+- Electronics
+- Battery (CR2032)
+- 3D printed case
+- Laser cut case back cover
+
+Click the image below for a short (~1 min) video showing the assembly process.
+
+[![Assembly Video Link](https://img.youtube.com/vi/ZrBIpawWA10/0.jpg)](https://www.youtube.com/watch?v=ZrBIpawWA10)
+
+First insert the battery into the electronics (positive side out).
+
+Next, slide the electronics into the case from the back making sure that the electronics slide behind the 6 plastic tabs.
+
+Finally, slide the laser cut case back cover in place to lock the electronics into the case. Optionally, tie a lanyard through the hole to wear the badge as a pendant.
+
+To activate the badge press your finger against the two neurons at the bottom of the badge.
+
+TODO add break here to jump to advanced assembly instructions
+
+# Building your own badge
+
+Badge assembly involves 5 steps:
+- soldering electronic components to the badge printed circuit board
+- programming the microcontroller
+- 3D printing the main case body
+- laser cutting a custom case back cover
+
+## Soldering
+
+All the electronic components are surface mount devices (SMD) which means they
+sit on the top or bottom of the badge and do not have pins that go through the
+board (like through-hole parts). Soldering SMD electronics takes some practice
+and a few tips can make the process much easier. One useful technique is to solder
+1 pin at the corner of a part. This pin can be reheated and the part position
+adjusted with forceps while the solder is molten. When the part is correctly
+aligned the opposite pin can be soldered to lock the part in place before
+connecting the remaining pins.
+
+One useful technique is to
+perform the following when placing a part:
+- note the polarity of the part, all packages will have some reference designating part orientation (like a small dot near pin 1)
+- note the polarity of the footprint, footprints often have a small dot or line indicating pin 1
+- apply heat and solder to one of the footprint pads, this will be your first anchor point
+- pick up the part with tweezers, orient it near the footprint and confirm the part orientation matches the footprint
+- re-heat the anchor point and place your part so that the appropriate pin attaches to the anchor point
+- if the part orientation needs to be adjusted (if the other pins don't line up with their pads), reheat the anchor point while holding and then moving the part. While the solder is molten, the part can easily be moved but be careful to not move the part when the soldering is cooling or cold.
+- when the part orientation is good enough, solder the pin opposite the anchor point
+- re-confirm part orientation and if all is good, solder the remaining pins to their pads
+
+TODO: images and/or video of above steps
+
+It's often helpful to start with the shortest parts and solder the largest parts
+(connectors and in this case the battery tab) last. For this badge you might want to solder parts in the following order:
+- ATTiny (U1)
+- Resistors (R1-R4)
+- Capacitor (C1)
+- LEDs (D1-3)
+- battery tab (on back)
+
+TODO add pictures of each part, describe designators and reference marks and show placement on footprint.
+
+The ATTiny (U1) has several (8) closely spaced pins. Although the final result
+must have no short circuits because of solder between these pins it's often
+easier to drag solder the pins and then remove shorts. Drag soldering involves
+adding a larger than needed amount of solder while heating up the first pin
+on one side of the chip and then dragging this solder blob down the side of
+the chip bringing solder into contact with all pins. The surface tension of
+molten solder will often wick just enough solder into each pad and when you're
+lucky you will have no shorts. If you see solder between pins, clean your iron
+by wiping it on brass wool or a wet sponge and heat up the short with the
+clean iron. This will often pull solder away from your pins and onto the iron
+leaving you with short-free pins. If after a few tries you still have a short
+you can try using solder wick, a fine copper mesh, to clean up the joint.
+Unspool a length of solder wick, and press the wick against the joint with the
+hot soldering iron. The wick will get hot and pull the solder away from the
+joint.
+
+TODO gif of drag soldering, cleaning a shorted joint
+
+## Programming
+## 3D printing
+## Laser cutting
+
+
 # Electronics
 ![pcb](/media/imgs/cbs_badge_render.png?raw=true "Rough Render")
 ## PCB
@@ -140,21 +225,3 @@ For simple designs, vector graphics programs (Inkscape, Adobe Illustrator, Corel
 draw the paths the laser should follow and for more complex designs sketches can be exported from
 CAD software in a suitable format (DXF). For most 2D geometries lasercutting is significantly
 faster, more accurate and produced a better finished part compared to 3D printing.
-
-# Ordering
-
-To construct a badge you will need to:
-- obtain a PCB by coming to see us or ordering one from a suitable 'fab house' such as [OSHPark](https://oshpark.com/)
-Board is 2.25 square inches
-
-Parts for 100x = $263.02
-Boards for 100x = $225 (using oshpark medium run)
-
-Assuming same area for laser cut tabs:
-~50 per 12 x 24 inch sheet, so 2x 1/8" acrylic = ~$22
-
-Likely < 1 reel of filament so <$25
-
-And some string for lanyards
-
-Total is $535.02
