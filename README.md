@@ -182,8 +182,7 @@ as the touch sensor is held. When the touch sensor is released the microcontroll
 'sleep' mode to extend battery life.
 
 ## Case
-![front](/media/imgs/cad_front.png?raw=true "CAD front")
-![back](/media/imgs/cad_back.png?raw=true "CAD back")
+![Case CAD](/media/imgs/cad.png?raw=true "Case CAD")
 
 ### Computer aided design (CAD) using Autodesk Fusion360
 
