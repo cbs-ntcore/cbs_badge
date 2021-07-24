@@ -46,62 +46,66 @@ Badge assembly involves 5 steps:
 
 All the electronic components are surface mount devices (SMD) which means they
 sit on the top or bottom of the badge and do not have pins that go through the
-board (like through-hole parts). Soldering SMD electronics takes some practice
-and a few tips can make the process much easier. One useful technique is to solder
-1 pin at the corner of a part. This pin can be reheated and the part position
+board (like through-hole parts).
+
+It's often helpful to start with the shortest parts and solder the largest parts
+(connectors and in this case the battery tab) last. For this badge you might want to solder parts in the following order:
+- ATTiny (U1): the black 8 pin chip that goes in the middle
+- Resistors (R1-R4): a 106 (10 MOhm) resistor at R4 and 3 x 471 (4.7 kOhm) resistors one for each LED
+- Capacitor (C1): the small tan colored device
+- LEDs (D1-3): light emitting diodes, clear side up
+- battery holder (on back): make sure the battery slides in from the edge of the badge
+
+![Stuffed Board](/media/imgs/unstuffed_vs_stuffed.png?raw=true "Stuffed board")
+
+Some parts (the LEDs and ATTiny) only work when connected in one orientation.
+Be sure to connect:
+- the pin on the ATTiny next to the dot to the pad marked with an extended line
+- the green marked ends of the LEDs with the closed end of the lines
+
+Soldering SMD electronics takes some practice and a few tips can make the
+processmuch easier. One useful technique is to solder 1 pin at the corner
+of a part. This pin can be reheated and the part position
 adjusted with forceps while the solder is molten. When the part is correctly
 aligned the opposite pin can be soldered to lock the part in place before
 connecting the remaining pins.
 
-One useful technique is to
-perform the following when placing a part:
-- note the polarity of the part, all packages will have some reference designating part orientation (like a small dot near pin 1)
-- note the polarity of the footprint, footprints often have a small dot or line indicating pin 1
-- apply heat and solder to one of the footprint pads, this will be your first anchor point
-- pick up the part with tweezers, orient it near the footprint and confirm the part orientation matches the footprint
-- re-heat the anchor point and place your part so that the appropriate pin attaches to the anchor point
-- if the part orientation needs to be adjusted (if the other pins don't line up with their pads), reheat the anchor point while holding and then moving the part. While the solder is molten, the part can easily be moved but be careful to not move the part when the soldering is cooling or cold.
-- when the part orientation is good enough, solder the pin opposite the anchor point
-- re-confirm part orientation and if all is good, solder the remaining pins to their pads
+![Battery Cover](/media/imgs/back_battery_cover.png?raw=true "Battery Cover")
 
-TODO: images and/or video of above steps
-
-It's often helpful to start with the shortest parts and solder the largest parts
-(connectors and in this case the battery tab) last. For this badge you might want to solder parts in the following order:
-- ATTiny (U1)
-- Resistors (R1-R4)
-- Capacitor (C1)
-- LEDs (D1-3)
-- battery tab (on back)
-
-TODO add pictures of each part, describe designators and reference marks and show placement on footprint.
-
-The ATTiny (U1) has several (8) closely spaced pins. Although the final result
-must have no short circuits because of solder between these pins it's often
-easier to drag solder the pins and then remove shorts. Drag soldering involves
-adding a larger than needed amount of solder while heating up the first pin
-on one side of the chip and then dragging this solder blob down the side of
-the chip bringing solder into contact with all pins. The surface tension of
-molten solder will often wick just enough solder into each pad and when you're
-lucky you will have no shorts. If you see solder between pins, clean your iron
-by wiping it on brass wool or a wet sponge and heat up the short with the
-clean iron. This will often pull solder away from your pins and onto the iron
-leaving you with short-free pins. If after a few tries you still have a short
-you can try using solder wick, a fine copper mesh, to clean up the joint.
-Unspool a length of solder wick, and press the wick against the joint with the
-hot soldering iron. The wick will get hot and pull the solder away from the
-joint.
-
-TODO gif of drag soldering, cleaning a shorted joint
+When soldering the back battery holder take care as the iron will quickly heat
+up the entire metal clip. Allow the clip to cool down between applications of
+heat while adjusting the clip.
 
 ## Programming
+
+Make sure there is no battery in the badge (the programmer will power the
+electronics). Press the badge against the programmer aligning the upper 
+white portion of the logo with the notch in the programming jig as shown in the
+image below.
+
+![Programming](/media/imgs/programming.png?raw=true "Programming")
+
+While holding the badge in place run "Sketch->Upload Using Programmer" in the
+Arduino program. Some of the LEDs should blink and when the program says
+"Uploading Complete" (TODO verify this message) your badge is programmed.
+
+Remove the badge from the programmer, insert the battery and test the badge
+by pressing the neurons at the bottom of the badge while not touching the
+battery clip on the back.
+
 ## 3D printing
+
+TODO removing support material from print
+
 ## Laser cutting
 
+TODO customizing with name
 
-# Electronics
-![pcb](/media/imgs/cbs_badge_render.png?raw=true "Rough Render")
-## PCB
+# Designing your own badge
+
+## Electronics
+![PCB Render](/media/imgs/cbs_badge_render.png?raw=true "Rough Render")
+### PCB
 Although it is possible to fabricate your own printed circuit boards, the results are often less precise and more
 time consuming than ordering a custom board. The cost of the board will depend on the difficulty in fabricating the design,
 the lead time for the order and the quantity ordered. Designs that have traces (wires embedded in the PCB) that
@@ -113,7 +117,7 @@ at a USA location allowing for overnight shipping. For their 'Prototype' service
 layer PCB. The badge is 2.25 square inches costing $11.25 per board. When ordered with their 'Medium Run' bulk service
 (which requires ordering at least 100 square inches) the cost drops to $2.25 per board.
 
-## PCB and circuit design
+### PCB and circuit design
 
 ![schematic](/media/imgs/schematic.png?raw=true "Schematic")
 
@@ -134,7 +138,7 @@ including OSHPark will directly accept KiCad designs.
 
 ![pcb](/media/imgs/pcb_layers.png?raw=true "PCB Layers")
 
-## Programmable electronics using microcontrollers
+### Programmable electronics using microcontrollers
 
 The badge contains a microcontroller, a small computer designed to produce and sample digital
 and analog signals. The microcontroller can be programmed (more on this below) to produce precisely
@@ -146,8 +150,8 @@ This ATTiny has only 8 connections (pins) and requires only a program and a conn
 ground to function. For the badge 3 pins are connected to light emitting diodes (LEDs) and one more pin
 is connected to a custom neuron footprint used as a touch sensor.
 
-# Software
-## Embedded programming using Arduino
+## Software
+### Embedded programming using Arduino
 
 [Arduino](https://www.arduino.cc/) is a beginner friendly environment for writing programs for and configuring microcontrollers. There are
 many official and non-official 'Arduino compatible' boards which can be programmed with the Arduino
@@ -177,11 +181,11 @@ quickly converges to a state of continuous fast firing. The network will continu
 as the touch sensor is held. When the touch sensor is released the microcontroller will reenter
 'sleep' mode to extend battery life.
 
-# Case
+## Case
 ![front](/media/imgs/cad_front.png?raw=true "CAD front")
 ![back](/media/imgs/cad_back.png?raw=true "CAD back")
 
-## Computer aided design (CAD) using Autodesk Fusion360
+### Computer aided design (CAD) using Autodesk Fusion360
 
 ![CAD](/media/gifs/CAD_design.gif?raw=true "CAD design")
 
@@ -195,7 +199,7 @@ parts were designed. This history can be edited and replayed to generate part re
 adapt a single design to multiple applications. For the badge, 2 parts were designed: a 
 case designed for easy 3D printing and a customizable back cover designed for laser cutting.
 
-## 3D printed case
+### 3D printed case
 
 ![3D printing](/media/gifs/3D_printing_slicing.gif?raw=true "3D printing")
 
@@ -215,7 +219,7 @@ to join to)
 - loading and running the GCODE on a suitable 3D printer
 - finally removing any support material and finishing your part
 
-## Lasercut back cover
+### Lasercut back cover
 
 Lasercutting is a common technique for cutting 2D shapes out of flat sheets of plastic (typically
 acrylic). A high powered (75 watt) CO2 laser is focused on the surface of the plastic at a position
