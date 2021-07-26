@@ -1,11 +1,11 @@
 This badge is designed to highlight digital fabrication techniques that are commonly
-used in the [Neurotechnology Core](https://www.ntcore.org/) at the
+used in the [Neurotechnology Core](https://www.ntcore.org/)(NTCore) at the
 [Center for Brain Science](http://cbs.fas.harvard.edu/) at Harvard University.
 
 The NTCore works to accelerate and advance scientific progress through:
 - design and fabrication of novel instrumentation
 - user training and access to a shared fabrication space
-- consultation on instrumentation use, design, fabrication and purchase
+- consultation on instrumentation use, design, fabrication, and purchase
 
 By building a badge users will learn about:
 - electronics design including making a custom printed circuit board (PCB) using the free and open source [KiCad](https://www.kicad.org/) design software
@@ -14,46 +14,58 @@ By building a badge users will learn about:
 - designing mechanical parts using [Autodesk Fusion360](https://www.autodesk.com/products/fusion-360/) (free to academics)
 - digital fabrication using 3D printing and laser cutting for rapid prototyping and production
 
-Your badge comes in 4 major parts:
+TODO add description of tiers here
+
+# Assembling your badge
+
+Your badge comes in 4 major parts and requires some minor assembly before use:
 - Electronics
 - Battery (CR2032)
-- 3D printed case
 - Laser cut case back cover
+- 3D printed case
+
+Below is a description of the assembly steps followed by a video of the assembly process.
+
+- [ ] Install the battery into the electronics (positive side out).
+- [ ] Insert the electronics into the case from the back making sure that the electronics slide behind the 6 plastic tabs.
+- [ ] Slide the laser cut case back cover in place to lock the electronics into the case.
+- [ ] Test the badge by pressing your finger against the two neurons at the bottom of the badge. If your hands are very dry you may need to slightly moisten your finger before touching the badge.
 
 Click the image below for a short (~1 min) video showing the assembly process.
 
 [![Assembly Video Link](https://img.youtube.com/vi/ZrBIpawWA10/0.jpg)](https://www.youtube.com/watch?v=ZrBIpawWA10)
 
-First insert the battery into the electronics (positive side out).
+The hole at the top of the laser cut piece can be used to hang the badge from a lanyard, carabiner or cord.
 
-Next, slide the electronics into the case from the back making sure that the electronics slide behind the 6 plastic tabs.
-
-Finally, slide the laser cut case back cover in place to lock the electronics into the case. Optionally, tie a lanyard through the hole to wear the badge as a pendant.
-
-To activate the badge press your finger against the two neurons at the bottom of the badge.
-
-TODO add break here to jump to advanced assembly instructions
+If you are interested in more building experience, follow along with building the parts
+of the badge.
 
 # Building your own badge
 
-Badge assembly involves 5 steps:
+TODO intro sentence
+
+Badge building involves 5 steps:
 - soldering electronic components to the badge printed circuit board
 - programming the microcontroller
 - 3D printing the main case body
 - laser cutting a custom case back cover
+- assembling your badge
 
 ## Soldering
 
-All the electronic components are surface mount devices (SMD) which means they
-sit on the top or bottom of the badge and do not have pins that go through the
-board (like through-hole parts).
+If you have not soldered before, [adafruit.com](adafruit.com) has a very good
+[guide to soldering](https://learn.adafruit.com/adafruit-guide-excellent-soldering/surface-mount)
+including tips on surface mount soldering.
 
-It's often helpful to start with the shortest parts and solder the largest parts
-(connectors and in this case the battery tab) last. For this badge you might want to solder parts in the following order:
+All the electronic components are surface mount devices (SMD) which attach to
+copper 'footprints' on the top or bottom of the badge.
+
+It's often helpful to start with the shortest parts and solder the largest parts last
+(connectors and in this case the battery tab). For this badge you might want to solder parts in the following order:
 - ATTiny (U1): the black 8 pin chip that goes in the middle
-- Resistors (R1-R4): a 106 (10 MOhm) resistor at R4 and 3 x 471 (4.7 kOhm) resistors one for each LED
 - Capacitor (C1): the small tan colored device
-- LEDs (D1-3): light emitting diodes, clear side up
+- Resistors (R1-R4): a 106 (10 MOhm) resistor (R4) and 3 x 471 (4.7 kOhm) resistors one for each LED (R1-3)
+- LEDs (D1-3): light emitting diodes, clear side up, green arrow down
 - battery holder (on back): make sure the battery slides in from the edge of the badge
 
 ![Stuffed Board](/media/imgs/unstuffed_vs_stuffed.png?raw=true "Stuffed board")
@@ -64,17 +76,30 @@ Be sure to connect:
 - the green marked ends of the LEDs with the closed end of the lines
 
 Soldering SMD electronics takes some practice and a few tips can make the
-processmuch easier. One useful technique is to solder 1 pin at the corner
+process much easier. One useful technique is to solder 1 pin at the corner
 of a part. This pin can be reheated and the part position
 adjusted with forceps while the solder is molten. When the part is correctly
 aligned the opposite pin can be soldered to lock the part in place before
-connecting the remaining pins.
+soldering the remaining pins.
+
+It's time to solder the components on the front of the badge:
+- [ ] ATTiny at U1, take note of the orientation
+- [ ] Capacitor at C1
+- [ ] 106 (10 MOhm) resistor at R4
+- [ ] 3 x 471 (4.7kOhm) resistors at R1, R2, R3
+- [ ] 3 x LEDs at D1, D2, D3: take note of the orientation
+
+Finally, flip over the badge to prepare to solder on the battery clip.
+
+TODO update image with soldered battery clip
 
 ![Battery Cover](/media/imgs/back_battery_cover.png?raw=true "Battery Cover")
 
-When soldering the back battery holder take care as the iron will quickly heat
+Solder the back battery holder taking care as the iron will quickly heat
 up the entire metal clip. Allow the clip to cool down between applications of
-heat while adjusting the clip.
+heat while adjusting the clip. Be sure to add plenty of solder to create a
+solid connection that will resist the spring force of the clip when the battery
+is inserted.
 
 ## Programming
 
@@ -87,7 +112,7 @@ image below.
 
 While holding the badge in place run "Sketch->Upload Using Programmer" in the
 Arduino program. Some of the LEDs should blink and when the program says
-"Uploading Complete" (TODO verify this message) your badge is programmed.
+"Upload Complete" (TODO verify this message) your badge is programmed.
 
 Remove the badge from the programmer, insert the battery and test the badge
 by pressing the neurons at the bottom of the badge while not touching the
@@ -102,6 +127,8 @@ TODO removing support material from print
 TODO customizing with name
 
 # Designing your own badge
+
+TODO intro sentence
 
 ## Electronics
 ![PCB Render](/media/imgs/cbs_badge_render.png?raw=true "Rough Render")
@@ -162,7 +189,8 @@ adding support for the board you'd like the use, installing any required librari
 your program and 'uploading' it to your board. Most boards can be programmed over USB. However, the
 badge uses a simpler method called 'in circuit serial programming' (ICSP) that requires a custom
 programmer (such as the [Pocket AVR Programmer](https://www.sparkfun.com/products/9825) or 
-[USBtinyISP](https://www.adafruit.com/product/46)).
+[USBtinyISP](https://www.adafruit.com/product/46)). To compile code for the ATTiny you will need to
+install support for the ATTiny from here: [https://github.com/damellis/attiny](https://github.com/damellis/attiny)
 
 For a detailed course on using Arduino please see the
 ['Arduino for Biologists' nanocourse](https://github.com/HMS-RIC/ArduinoNanocourse).
