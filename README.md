@@ -64,7 +64,7 @@ It's often helpful to start with the shortest parts and solder the largest parts
 (connectors and in this case the battery tab). For this badge you might want to solder parts in the following order:
 - ATTiny (U1): the black 8 pin chip that goes in the middle
 - Capacitor (C1): the small tan colored device
-- Resistors (R1-R4): a 106 (10 MOhm) resistor (R4) and 3 x 471 (4.7 kOhm) resistors one for each LED (R1-3)
+- Resistors (R1-R4): a 106 (10 MOhm) resistor (R4) and 3 x 471 (470 Ohm) resistors one for each LED (R1-3)
 - LEDs (D1-3): light emitting diodes, clear side up, green arrow down
 - battery holder (on back): make sure the battery slides in from the edge of the badge
 
@@ -83,11 +83,15 @@ aligned the opposite pin can be soldered to lock the part in place before
 soldering the remaining pins.
 
 It's time to solder the components on the front of the badge:
-- [ ] ATTiny at U1, take note of the orientation
-- [ ] Capacitor at C1
-- [ ] 106 (10 MOhm) resistor at R4
-- [ ] 3 x 471 (4.7kOhm) resistors at R1, R2, R3
-- [ ] 3 x LEDs at D1, D2, D3: take note of the orientation
+- [ ] U1: black 8 pin ATTiny, note the orientation
+- [ ] C1: tan capacitor
+- [ ] R4: 106 (10 MOhm) resistor
+- [ ] R1: 471 (470 Ohm) resistor
+- [ ] R2: 471 (470 Ohm) resistor
+- [ ] R3: 471 (470 Ohm) resistor
+- [ ] D1: LED, note the orientation
+- [ ] D2: LED, note the orientation
+- [ ] D3: LED, note the orientation
 
 Finally, flip over the badge to prepare to solder on the battery clip.
 
@@ -112,7 +116,7 @@ image below.
 
 While holding the badge in place run "Sketch->Upload Using Programmer" in the
 Arduino program. Some of the LEDs should blink and when the program says
-"Upload Complete" (TODO verify this message) your badge is programmed.
+"Done uploading" your badge is programmed.
 
 Remove the badge from the programmer, insert the battery and test the badge
 by pressing the neurons at the bottom of the badge while not touching the
