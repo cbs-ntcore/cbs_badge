@@ -14,7 +14,10 @@ By building a badge users will learn about:
 - designing mechanical parts using [Autodesk Fusion360](https://www.autodesk.com/products/fusion-360/) (free to academics)
 - digital fabrication using 3D printing and laser cutting for rapid prototyping and production
 
-TODO add description of tiers here
+We are happy to offer customized assistance. For the badge you can choose to:
+- [Assemble pre-built parts](#assembling-your-badge)
+- [Build (by soldering, laser cutting, etc...) and then assemble parts](#building-your-own-badge)
+- Design your own parts (we're happy to help!)
 
 # Assembling your badge
 
@@ -42,16 +45,50 @@ of the badge.
 
 # Building your own badge
 
-TODO intro sentence
-
 Badge building involves 5 steps:
-- soldering electronic components to the badge printed circuit board
-- programming the microcontroller
-- 3D printing the main case body
-- laser cutting a custom case back cover
-- assembling your badge
+- [soldering electronic components to the badge printed circuit board](#soldering)
+- [programming the microcontroller](#programming)
+- [3D printing the main case body](#3d-printed-case)
+- [laser cutting a custom case back cover](#lasercut-back-cover)
+- [assembling your badge](#assembling-your-badge)
 
-## Soldering
+## Electronics
+
+![PCB Render](/media/imgs/cbs_badge_render.png?raw=true "Rough Render")
+### PCB
+Although it is possible to fabricate your own printed circuit boards, the results are often less precise and more
+time consuming than ordering a custom board. The cost of the board will depend on the difficulty in fabricating the design,
+the lead time for the order and the quantity ordered. Designs that have traces (wires embedded in the PCB) that
+are less than 6 mils (thousandths of an inch) or have many layers (pcbs are made by stacking layers of fiberglass, patterned
+copper and other materials) are typically manufacturable at an increased cost or lead time. The design for this
+badge is relatively simple and can be made by most low cost venders ('fab houses') including [OSHPark](https://oshpark.com/).
+OSHPark is highly recommended as they produce high quality boards with a relatively short lead time (typically a week)
+at a USA location allowing for overnight shipping. For their 'Prototype' service they charge $5 per square inch for a 2
+layer PCB. The badge is 2.25 square inches costing $11.25 per board. When ordered with their 'Medium Run' bulk service
+(which requires ordering at least 100 square inches) the cost drops to $2.25 per board.
+
+### PCB and circuit design
+
+![schematic](/media/imgs/schematic.png?raw=true "Schematic")
+
+[KiCad](https://www.kicad.org/) is a free and open source electronics design program that runs on all modern operating systems. It's design
+process involves a number of steps often starting with making a schematic of the circuit you would like to build.
+This schematic typically includes several components (including resistors, capacitors, connectors, integrated
+circuits etc) connected using traces (wires embedded in the final PCB design). After a schematic is drawn some
+automated tests should be run (electrical rules check or ERC) to check for incorrect or missing connections. The
+final schematic and components can then be exported as a 'netlist', footprints (custom copper shapes that fit
+specific components) can then be associated with the netlist components and then imported into the pcb
+layout editor. In the pcb layout editor footprints are placed on a layered design (typical low cost boards
+have 2 copper layers 'top' and 'bottom') and traces are drawn to connect footprints based on the connectivity
+defined in the netlist. Before finalizing a design the pcb layout editor can run several automated checks
+(design rule checks or DRC) to verify that your design matches the capabilities of the fab house (you will need
+to input these design rules into the editor). Fab houses typically accept gerber files (a special file format
+that contains images of layers of the pcb and other features needed for fabrication). However, some houses
+including OSHPark will directly accept KiCad designs.
+
+![pcb](/media/imgs/pcb_layers.png?raw=true "PCB Layers")
+
+### Soldering
 
 If you have not soldered before, [adafruit.com](adafruit.com) has a very good
 [guide to soldering](https://learn.adafruit.com/adafruit-guide-excellent-soldering/surface-mount)
@@ -95,8 +132,6 @@ It's time to solder the components on the front of the badge:
 
 Finally, flip over the badge to prepare to solder on the battery clip.
 
-TODO update image with soldered battery clip
-
 ![Battery Cover](/media/imgs/back_battery_cover.png?raw=true "Battery Cover")
 
 Solder the back battery holder taking care as the iron will quickly heat
@@ -105,70 +140,7 @@ heat while adjusting the clip. Be sure to add plenty of solder to create a
 solid connection that will resist the spring force of the clip when the battery
 is inserted.
 
-## Programming
-
-Make sure there is no battery in the badge (the programmer will power the
-electronics). Press the badge against the programmer aligning the upper 
-white portion of the logo with the notch in the programming jig as shown in the
-image below.
-
-![Programming](/media/imgs/programming.png?raw=true "Programming")
-
-While holding the badge in place run "Sketch->Upload Using Programmer" in the
-Arduino program. Some of the LEDs should blink and when the program says
-"Done uploading" your badge is programmed.
-
-Remove the badge from the programmer, insert the battery and test the badge
-by pressing the neurons at the bottom of the badge while not touching the
-battery clip on the back.
-
-## 3D printing
-
-TODO removing support material from print
-
-## Laser cutting
-
-TODO customizing with name
-
-# Designing your own badge
-
-TODO intro sentence
-
-## Electronics
-![PCB Render](/media/imgs/cbs_badge_render.png?raw=true "Rough Render")
-### PCB
-Although it is possible to fabricate your own printed circuit boards, the results are often less precise and more
-time consuming than ordering a custom board. The cost of the board will depend on the difficulty in fabricating the design,
-the lead time for the order and the quantity ordered. Designs that have traces (wires embedded in the PCB) that
-are less than 6 mils (thousandths of an inch) or have many layers (pcbs are made by stacking layers of fiberglass, patterned
-copper and other materials) are typically manufacturable at an increased cost or lead time. The design for this
-badge is relatively simple and can be made by most low cost venders ('fab houses') including [OSHPark](https://oshpark.com/).
-OSHPark is highly recommended as they produce high quality boards with a relatively short lead time (typically a week)
-at a USA location allowing for overnight shipping. For their 'Prototype' service they charge $5 per square inch for a 2
-layer PCB. The badge is 2.25 square inches costing $11.25 per board. When ordered with their 'Medium Run' bulk service
-(which requires ordering at least 100 square inches) the cost drops to $2.25 per board.
-
-### PCB and circuit design
-
-![schematic](/media/imgs/schematic.png?raw=true "Schematic")
-
-[KiCad](https://www.kicad.org/) is a free and open source electronics design program that runs on all modern operating systems. It's design
-process involves a number of steps often starting with making a schematic of the circuit you would like to build.
-This schematic typically includes several components (including resistors, capacitors, connectors, integrated
-circuits etc) connected using traces (wires embedded in the final PCB design). After a schematic is drawn some
-automated tests should be run (electrical rules check or ERC) to check for incorrect or missing connections. The
-final schematic and components can then be exported as a 'netlist', footprints (custom copper shapes that fit
-specific components) can then be associated with the netlist components and then imported into the pcb
-layout editor. In the pcb layout editor footprints are placed on a layered design (typical low cost boards
-have 2 copper layers 'top' and 'bottom') and traces are drawn to connect footprints based on the connectivity
-defined in the netlist. Before finalizing a design the pcb layout editor can run several automated checks
-(design rule checks or DRC) to verify that your design matches the capabilities of the fab house (you will need
-to input these design rules into the editor). Fab houses typically accept gerber files (a special file format
-that contains images of layers of the pcb and other features needed for fabrication). However, some houses
-including OSHPark will directly accept KiCad designs.
-
-![pcb](/media/imgs/pcb_layers.png?raw=true "PCB Layers")
-
+## Software
 ### Programmable electronics using microcontrollers
 
 The badge contains a microcontroller, a small computer designed to produce and sample digital
@@ -181,7 +153,6 @@ This ATTiny has only 8 connections (pins) and requires only a program and a conn
 ground to function. For the badge 3 pins are connected to light emitting diodes (LEDs) and one more pin
 is connected to a custom neuron footprint used as a touch sensor.
 
-## Software
 ### Embedded programming using Arduino
 
 [Arduino](https://www.arduino.cc/) is a beginner friendly environment for writing programs for and configuring microcontrollers. There are
@@ -213,6 +184,23 @@ quickly converges to a state of continuous fast firing. The network will continu
 as the touch sensor is held. When the touch sensor is released the microcontroller will reenter
 'sleep' mode to extend battery life.
 
+### Programming
+
+Make sure there is no battery in the badge (the programmer will power the
+electronics). Press the badge against the programmer aligning the upper 
+white portion of the logo with the notch in the programming jig as shown in the
+image below.
+
+![Programming](/media/imgs/programming.png?raw=true "Programming")
+
+While holding the badge in place run "Sketch->Upload Using Programmer" in the
+Arduino program. Some of the LEDs should blink and when the program says
+"Done uploading" your badge is programmed.
+
+Remove the badge from the programmer, insert the battery and test the badge
+by pressing the neurons at the bottom of the badge while not touching the
+battery clip on the back.
+
 ## Case
 ![Case CAD](/media/imgs/cad.png?raw=true "Case CAD")
 
@@ -241,9 +229,9 @@ polylactic acid (PLA). FDM printing involves heating up and forcing (extruding) 
 circular nozzle (0.4 mm in diameter) that is mounted to a XYZ movement system. By depositing
 and fusing overlapping 2D layers, complex 3D shapes can be created. Preparing a design for FDM
 printing involves:
--  exporting a solid model (in STL file format) from your CAD software
--  importing the STL into a 'slicer' program that:
-    -  cuts the model into 2D layers
+- exporting a solid model (in STL file format) from your CAD software
+- importing the STL into a 'slicer' program that:
+    - cuts the model into 2D layers
     - adds any necessary support material to deal with unsupported overhangs (where a higher 2D layer has no plastic underneath
 to join to)
     - generates a sequence of movements (GCODE) to command the 3D printer to make the part
